@@ -30,5 +30,10 @@ class ContainerTestCase(unittest.TestCase):
     def test_list_length(self):
         self.assertEqual(len(ContainerTestCase.todo_list.tasks),3)
 
+    def test_empty_list_allowed(self):
+        empty_todo_list = ToDoContainer(tasks=[])
+        self.assertEqual(len(empty_todo_list.tasks), 0)
+
+
 if __name__ == '__main__':
     unittest.main()

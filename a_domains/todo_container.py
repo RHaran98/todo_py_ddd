@@ -8,7 +8,7 @@ from pydantic import BaseModel
 # Identifiable
 # Mutable (Preferably not)
 class ToDoContainer(Entity):
-    tasks: List[ToDoTask]
+    tasks: List[ToDoTask] = []
 
     def __eq__(self, o: object) -> bool:
         if isinstance(o, ToDoContainer):
