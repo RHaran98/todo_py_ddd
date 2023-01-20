@@ -1,7 +1,6 @@
 from typing import List
-from a_domains.todo_task import ToDoTask
+from modules.todo.domains.todo_task import ToDoTask
 from shared.base_classes import Entity
-from pydantic import BaseModel
 
 
 # Entity

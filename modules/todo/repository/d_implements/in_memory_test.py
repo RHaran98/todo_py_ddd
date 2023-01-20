@@ -1,8 +1,8 @@
 from unittest import TestCase
-from c_repository.d_implements.in_memory import InMemoryToDoRepo
-from b_factory.todo_task_factory import ToDoTaskFactory
-from a_domains.todo_container import ToDoContainer
-from a_domains.todo_task import ToDoTask
+from modules.todo.repository.d_implements.in_memory import InMemoryToDoRepo
+from modules.todo.factory.todo_task_factory import ToDoTaskFactory
+from modules.todo.domains.todo_container import ToDoContainer
+from modules.todo.domains.todo_task import ToDoTask
 
 class InMemoryToDoRepoTestcase(TestCase):
 

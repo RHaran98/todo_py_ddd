@@ -1,7 +1,7 @@
 from typing import Union
 
-from a_domains.todo_task import ToDoTask
-from a_domains.todo_container import ToDoContainer
+from modules.todo.domains.todo_task import ToDoTask
+from modules.todo.domains.todo_container import ToDoContainer
 from pydantic import ValidationError
 from typing import TypedDict
 

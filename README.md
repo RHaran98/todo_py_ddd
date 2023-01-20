@@ -9,6 +9,6 @@ pip install -r requirements.txt
 ```
 - Run the app using uvicorn
 ```sh
-uvicorn f_infrastructure.main:app --reload
+uvicorn modules.todo.infrastructure.main:app --reload
 ```
 - Go to [localhost:8000/docs](localhost:8000/docs)

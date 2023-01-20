@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
-from a_domains.todo_task import ToDoTask
-from a_domains.todo_container import ToDoContainer
+from modules.todo.domains.todo_task import ToDoTask
+from modules.todo.domains.todo_container import ToDoContainer
 
 
 class ToDoRepo(ABC):

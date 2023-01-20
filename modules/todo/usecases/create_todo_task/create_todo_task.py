@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
-from a_domains.todo_task import ToDoTask
-from c_repository.interface import ToDoRepo
+from modules.todo.domains.todo_task import ToDoTask
+from modules.todo.repository.interface import ToDoRepo
 
 
 class CreateTaskUseCase(ABC):

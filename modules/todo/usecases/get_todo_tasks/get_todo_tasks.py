@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
-from a_domains.todo_container import ToDoContainer
-from c_repository.interface import ToDoRepo
+from modules.todo.domains.todo_container import ToDoContainer
+from modules.todo.repository.interface import ToDoRepo
 
 
 class GetTasksUseCase(ABC):

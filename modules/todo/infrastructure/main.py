@@ -1,4 +1,4 @@
-from f_infrastructure.routes import inmemory_router
+from modules.todo.infrastructure.routes import inmemory_router
 from fastapi import FastAPI
 
 app = FastAPI()

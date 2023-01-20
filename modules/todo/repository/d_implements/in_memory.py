@@ -1,8 +1,7 @@
-from a_domains.todo_container import ToDoContainer
-from a_domains.todo_task import ToDoTask
-from c_repository.interface import ToDoRepo
-from b_factory.todo_task_factory import ToDoTaskFactory, ToDoContainerFactory
-from pydantic import ValidationError
+from modules.todo.domains.todo_container import ToDoContainer
+from modules.todo.domains.todo_task import ToDoTask
+from modules.todo.repository.interface import ToDoRepo
+from modules.todo.factory.todo_task_factory import ToDoContainerFactory
 
 
 class InMemoryToDoRepo(ToDoRepo):

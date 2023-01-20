@@ -1,7 +1,7 @@
 import unittest
 from todo_task_factory import ToDoTaskFactory, ToDoContainerFactory
-from a_domains.todo_container import ToDoContainer
-from a_domains.todo_task import ToDoTask
+from modules.todo.domains.todo_container import ToDoContainer
+from modules.todo.domains.todo_task import ToDoTask
 
 
 class ContainerTestCase(unittest.TestCase):

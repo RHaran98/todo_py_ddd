@@ -1,14 +1,14 @@
 from unittest import TestCase
-from e_usecases.create_todo_task.create_todo_task import CreateTaskUseCaseImplement
-from e_usecases.delete_todo_task.delete_todo_task import DeleteTaskUseCaseImplement
-from e_usecases.get_todo_tasks.get_todo_tasks import GetTasksUseCaseImplement
-from e_usecases.replace_todo_task.replace_todo_task import ReplaceTaskUseCaseImplement
-from c_repository.d_implements.in_memory import InMemoryToDoRepo
-from b_factory.todo_task_factory import ToDoTaskFactory
-from a_domains.todo_container import ToDoContainer
+from modules.todo.usecases.create_todo_task.create_todo_task import CreateTaskUseCaseImplement
+from modules.todo.usecases.delete_todo_task.delete_todo_task import DeleteTaskUseCaseImplement
+from modules.todo.usecases.get_todo_tasks.get_todo_tasks import GetTasksUseCaseImplement
+from modules.todo.usecases.replace_todo_task.replace_todo_task import ReplaceTaskUseCaseImplement
+from modules.todo.repository.d_implements.in_memory import InMemoryToDoRepo
+from modules.todo.factory.todo_task_factory import ToDoTaskFactory
+from modules.todo.domains.todo_container import ToDoContainer
 
 
-# from a_domains.todo_task import ToDoTask
+# from domains.todo_task import ToDoTask
 
 class InMemoryToDoRepoTestcase(TestCase):
 
