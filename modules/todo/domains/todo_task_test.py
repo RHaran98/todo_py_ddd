@@ -13,6 +13,7 @@ class ToDoTasksTestCase(unittest.TestCase):
         task1 = ToDoTask(task_description="Task 1", is_completed=False)
         task2 = ToDoTask(task_description="Task 2", is_completed=False)
         self.assertEqual(task1.task_description, "Task 1")
+        self.assertNotEqual(task1.id, task2.id)
         self.assertEqual(task2.task_description, "Task 2")
 
     def test_task_value(self):

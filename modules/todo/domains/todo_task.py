@@ -1,16 +1,14 @@
-from shared.base_classes import ValueObject
+from shared.base_classes import Entity
 from pydantic import Field
+from uuid import UUID, uuid4
 
 
 # Value object
 # Mutable
 # Non identifiable
-class ToDoTask(ValueObject):
-    task_description:   str = Field(max_length=200)
-    is_completed:       bool = False
-
-    # @validator("task_description",pre=True)
-    # def validate_description(cls, value):
-    #     if isinstance(ag)
-
-
+def create_uuid():
+    return str(uuid4())
+class ToDoTask(Entity):
+    id: str = Field(default_factory=create_uuid)
+    task_description: str = Field(max_length=200)
+    is_completed: bool = False

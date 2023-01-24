@@ -13,9 +13,9 @@ class ToDoRepo(ABC):
         pass
 
     @abstractmethod
-    def delete_task(self, index: int) -> bool:
+    def delete_task(self, id: str) -> bool:
         pass
 
     @abstractmethod
-    def replace_task(self, index: int, task: ToDoTask) -> bool:
+    def replace_task(self, id: str, task: ToDoTask) -> bool:
         pass

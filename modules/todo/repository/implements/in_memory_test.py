@@ -1,5 +1,5 @@
 from unittest import TestCase
-from modules.todo.repository.d_implements.in_memory import InMemoryToDoRepo
+from modules.todo.repository.implements.in_memory import InMemoryToDoRepo
 from modules.todo.factory.todo_task_factory import ToDoTaskFactory
 from modules.todo.domains.todo_container import ToDoContainer
 from modules.todo.domains.todo_task import ToDoTask
@@ -21,30 +21,41 @@ class InMemoryToDoRepoTestcase(TestCase):
 
     def test_task_deletion(self):
         todo = InMemoryToDoRepo()
-        tasks = [ToDoTaskFactory.create_task("Helllo" + str(i)) for i in range(10)]
+        tasks = [ToDoTaskFactory.create_task("Hello" + str(i)) for i in range(10)]
         for task in tasks:
             todo.create_task(task)
 
-        res = todo.delete_task(10)
+        id = "does_not_exist"
+        res = todo.delete_task(id)
         self.assertEqual(res, False)
 
-        res = todo.delete_task(9)
+        id = todo._data.tasks[9].id
+        res = todo.delete_task(id)
         self.assertEqual(res, True)
         self.assertIsInstance(todo.get_tasks(), ToDoContainer)
         self.assertEqual(len(todo.get_tasks().tasks), 9)
 
-    def test_task_replace(self):
+    def test_task_replace_not_found(self):
         todo = InMemoryToDoRepo()
-        tasks = [ToDoTaskFactory.create_task("Helllo" + str(i)) for i in range(10)]
+        tasks = [ToDoTaskFactory.create_task("Hello" + str(i)) for i in range(10)]
         for task in tasks:
             todo.create_task(task)
 
-        res = todo.replace_task(10,ToDoTaskFactory.create_task("Special",is_completed=True))
+        id = "does_not_exist"
+        res = todo.replace_task(id, ToDoTaskFactory.create_task("Special",is_completed=True))
         self.assertEqual(res, False)
 
-        res = todo.replace_task(9, ToDoTaskFactory.create_task("Special", is_completed=True))
+    def test_task_replace_found(self):
+        todo = InMemoryToDoRepo()
+        tasks = [ToDoTaskFactory.create_task("Hello" + str(i)) for i in range(10)]
+        for task in tasks:
+            todo.create_task(task)
+
+        id = todo.get_tasks().tasks[9].id
+        res = todo.replace_task(id, ToDoTaskFactory.create_task("Special", is_completed=True))
         self.assertEqual(res, True)
         test_task = todo.get_tasks().tasks[9]
         self.assertIsInstance(test_task, ToDoTask)
         self.assertEqual(test_task.task_description, "Special")
         self.assertEqual(test_task.is_completed, True)
+

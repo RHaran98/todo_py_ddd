@@ -5,8 +5,8 @@ from todo_container import ToDoContainer
 class ContainerTestCase(unittest.TestCase):
     todo_list = ToDoContainer(tasks=[
         {
-            "task_description":"Get some rest",
-            "is_completed":True
+            "task_description": "Get some rest",
+            "is_completed": True
         },
         {
             "task_description": "Get some milk",
